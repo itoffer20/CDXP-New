@@ -35,12 +35,12 @@ jQuery(document).ready(function ($) {
     });
 
     $(function () {
-        $('li.parent').each(function () {
+        $('li.menu-item-has-children').each(function () {
             $(this).children('a').after('<i class="fas fa-angle-down"></i>');
         });
 
-        $('li.parent i').on("click", function () {
-            $(this).siblings('ul.children').toggle("slow");
+        $('li.menu-item-has-children i').on("click", function () {
+            $(this).siblings('.menu-item-has-children ul.sub-menu').toggle("slow");
         });
     });
 
