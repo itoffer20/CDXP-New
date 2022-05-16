@@ -139,10 +139,18 @@ get_header(); ?>
 
             </div>
             <div class="col-xl-4 col-lg-4">
-                <div class="book-calendar">
+            <?php
+                $book_mode_form_shortcode = get_field('book_mode_form_shortcode');
+                if ($book_mode_form_shortcode) { ?>
+                    <div class="form-details">
+                        <h3><?php _e('BOOK MØDE','cdxp'); ?></h3>
+                        <?php echo do_shortcode($book_mode_form_shortcode); ?>
+                    </div>
+                <?php } ?>
+                <!-- <div class="book-calendar">
                     <img src="assets/images/calendar.png" class="img-fluid">
                     <a href="#" class="btn btn-dark mt-3">BOOK MØDE</a>
-                </div>
+                </div> -->
             </div>
 
         </div>
