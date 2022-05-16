@@ -96,7 +96,7 @@ button {
 	-webkit-transition: all 0.3s ease-in-out;
 	transition: all .3s ease-in-out;
 }
-button{
+button, input[type=submit]{
 	color:#263B4B;
 	border:unset;
 	padding:12px 35px;
@@ -107,7 +107,7 @@ button{
 	text-transform:capitalize;
 	width: 100%;
 }
-button:hover{
+button:hover, input[type=submit]:hover{
 	background: #ffffff;
 }
 button:focus{
@@ -138,6 +138,11 @@ input, textarea, select{
     right: 10px;
     color: #929292;
     line-height: 46px;
+	z-index: 333;
+	top:0;
+}
+span.wpcf7-form-control-wrap {
+	display: block;
 }
 textarea{
 	min-height: 115px;
@@ -309,9 +314,9 @@ button:focus {
 	background:#CADDA2;
 	border-color:#CADDA2;
 }
-.btn-dark:hover{
+.btn-dark:hover, .form-details form .wpcf7-submit:hover{
 	color: #ffffff;
-	background:#263B4B;
+	background:#263B4B !important;
 	border-color:#263B4B;
 }
 .btn.active:focus, .btn:active:focus {
@@ -393,11 +398,11 @@ button:focus {
 .dark_skin .navbar .navbar-nav .dropdown-header {
 	color: #333333;
 }
-.dropdown-toggle::after {
+.menu-item-has-children>a::after {
 	border: 0 none;
 	content: "\f107";
     font-family: "Font Awesome 5 Free";
-	margin-left: 5px;
+	margin-left: 10px;
 	vertical-align: middle;
 	font-weight: 600;
 }
@@ -406,7 +411,7 @@ button:focus {
 	right: 15px;
 	top: 10px;
 }
-.navbar .navbar-nav > li > .nav-link {
+.navbar .navbar-nav > li > a {
 	font-weight: 500;
 	padding:12px;
 	text-transform: uppercase;
@@ -418,10 +423,11 @@ button:focus {
 .transparent_header.nav-fixed .light_skin .navbar .navbar-nav > li:hover > a {
 	color: #CCDEA4;
 }
-.navbar .navbar-nav .dropdown-item {
+.navbar .navbar-nav .sub-menu li a {
 	padding: 8px 20px 8px 20px;
 	font-size: 14px;
 	text-transform: uppercase;
+	display: block;
 }
 .navbar .navbar-nav .dropdown-item.dropdown-toggler {
 	padding-right: 30px;
@@ -604,8 +610,10 @@ button:focus {
     text-align: center;
     border: 1px solid #eee;
 }
-ul.children {
+.menu-item-has-children ul.sub-menu {
     display: none;
+	height: auto !important;
+    width: 100% !important;
 }
 .mobile-menu-icon .icon{
 	border: 1px solid;
@@ -915,7 +923,7 @@ ul.children {
 footer{
 	background:#1F2937;
 }
-.f-contact{
+.f-contact ul{
 	list-style: none;
 }
 .f-contact li,
@@ -925,8 +933,9 @@ footer{
 	line-height: 28px;
 	color:rgba(255, 255, 255, 0.56)
 }
-.f-contact li p{
+.f-contact li:first-child{
 	max-width: 200px;
+	margin-bottom:25px;
 }
 .f-contact li{
 	margin-bottom:5px;
@@ -1009,7 +1018,12 @@ a.scrollup, a.scrollup:visited {
     border-radius: 4px;
     background: #263B4B;
 }
-
+.footer-form form p, form p{
+	margin-bottom:1rem;
+}
+.right-sidebar form label, .right-sidebar form br{
+	display: none;
+}
 /* Salesmanago page */
 
 .page-menu{
@@ -1023,10 +1037,18 @@ a.scrollup, a.scrollup:visited {
     font-size: 16px;
 	font-family: "Font Awesome 5 Free";
 }
-.page-menu  .breadcrumb{
+.page-menu  .breadcrumb, #breadcrumbs{
 	background:transparent;
 	padding:0;
 	margin:0;
+	font-size: 16px;
+}
+#breadcrumbs a{
+	margin-right: 10px;
+}
+#breadcrumbs span.breadcrumb_last{
+	margin-left:10px;
+	color:#cbcbcb;
 }
 .page-menu  .breadcrumb li{
 	color:#cbcbcb;

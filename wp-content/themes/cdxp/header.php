@@ -67,18 +67,20 @@
                             $button_1 = (isset($header_right_buttons['button_1'])) ? $header_right_buttons['button_1'] : false;
                             $button_2 = (isset($header_right_buttons['button_2'])) ? $header_right_buttons['button_2'] : false;
                             if ($button_1 || $button_2) { ?>
-                                <div class="menu-btn d-flex">
-                                    <?php if ($button_1) { ?>
-                                        <div class="contact-btn">
-                                            <a href="<?php echo esc_url($button_1['url']); ?>" class="btn btn-dark"><?php echo esc_html($button_1['title']); ?></a>
-                                        </div>
-                                    <?php }
+                        <div class="menu-btn d-flex">
+                            <?php if ($button_1) { ?>
+                            <div class="contact-btn">
+                                <a href="<?php echo esc_url($button_1['url']); ?>"
+                                    class="btn btn-dark"><?php echo esc_html($button_1['title']); ?></a>
+                            </div>
+                            <?php }
                                     if ($button_2) { ?>
-                                        <div class="book-mode">
-                                            <a href="<?php echo esc_url($button_2['url']); ?>" class="btn ml-3"><?php echo esc_html($button_2['title']); ?></a>
-                                        </div>
-                                    <?php } ?>
-                                </div>
+                            <div class="book-mode">
+                                <a href="<?php echo esc_url($button_2['url']); ?>"
+                                    class="btn ml-3"><?php echo esc_html($button_2['title']); ?></a>
+                            </div>
+                            <?php } ?>
+                        </div>
                         <?php }
                         } ?>
                     </nav>
@@ -88,11 +90,16 @@
 
         <!-- mobile menu  -->
 
+
         <div class="mobile-navigation">
             <div class="side-menu-header mb-3">
                 <div class="logo">
-                    <a class="navbar-brand" href="index.php">
-                        <img class="img-fluid" src="assets/images/Seomondo CDXP.svg" alt="logo" />
+                    <a class="navbar-brand" href="<?php echo get_site_url(); ?>">
+                        <img class="img-fluid" src="<?php
+                                                            $custom_logo_id = get_theme_mod('custom_logo');
+                                                            $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+                                                            echo $image[0];
+                                                            ?>" alt="logo" />
                     </a>
                 </div>
             </div>
