@@ -117,3 +117,8 @@
 
         <div class="body-overlay"></div>
         <!-- END HEADER -->
+        <?php
+        if (!is_front_page() && function_exists('yoast_breadcrumb')) {
+            yoast_breadcrumb('<div class="page-menu"><div class="container"><p id="breadcrumbs">', '</div></div><p>');
+        }
+        ?>

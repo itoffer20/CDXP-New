@@ -3,7 +3,6 @@
 Template Name: Contact Page Template
 */
 get_header(); ?>
-<?php get_cdxp_breadcrumb(); ?>
 <section class="contact-sec p-0">
     <div class="container">
         <?php

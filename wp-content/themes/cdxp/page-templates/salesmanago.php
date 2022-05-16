@@ -3,9 +3,6 @@
 Template Name: Salesmanago Page Template
 */
 get_header(); ?>
-
-<?php get_cdxp_breadcrumb(); ?>
-
 <div class="salesmanago-detail">
     <div class="container">
         <section class="salesmanago-sec pt-0">
