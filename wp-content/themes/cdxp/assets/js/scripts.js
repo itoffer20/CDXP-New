@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
 
     // slider 
 
@@ -11,26 +11,26 @@ jQuery(document).ready(function () {
         arrows: false,
         dots: true,
         responsive: [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 575,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2
             }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }
         ]
     });
 
@@ -100,5 +100,11 @@ jQuery(document).ready(function () {
     jQuery(".body-overlay ").on("click", function () {
         jQuery(".mobile-navigation").removeClass("active");
     });
+
+
+        var $select = $('.page-template-contact .form-details .wpcf7-form-control-wrap select');
+        $('option:first', $select).attr('disabled', true);
+        $('option:first', $select).attr('selected','selected');
+        $('option:first', $select).val('');
 
 });

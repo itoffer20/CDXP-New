@@ -18,3 +18,4 @@ function cdxp_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'cdxp_widgets_init' );
+
