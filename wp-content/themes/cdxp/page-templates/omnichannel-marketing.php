@@ -75,16 +75,16 @@ get_header(); ?>
                         <div class="sales">
                             <div class="container">
                                 <section class="sales-sec">
-                                    <?php if ($section_title || $title_underline) { ?>
-                                        <div class="section-title" data-aos="fade-in">
-                                            <?php echo sprintf('<h2>%s<span class="line-dec">%s</span></h2>', esc_html($section_title), esc_html($title_underline)); ?>
+                                    <?php if ($section_title || $title_underline) {  ?>
+                                        <div class="section-title inner-title text-left mx-0">
+                                            <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
                                         </div>
-                                    <?php  } ?>
+                                    <?php  }  ?>
+                                    <?php if ($section_content) {
+                                        echo sprintf('<p>%s</p>', $section_content);
+                                    } ?>
                                     <div class="sales-offer text-center">
-                                        <?php if ($section_content) {
-                                            echo sprintf('<p>%s</p>', $section_content);
-                                        }
-                                        if ($purposes) {
+                                        <?php if ($purposes) {
                                         ?>
                                             <ul>
                                                 <?php foreach ($purposes as $purpose) {
@@ -198,16 +198,16 @@ get_header(); ?>
                         <div class="sales">
                             <div class="container">
                                 <section class="sales-sec">
-                                    <?php if ($section_title || $title_underline) { ?>
-                                        <div class="section-title" data-aos="fade-in">
-                                            <?php echo sprintf('<h2>%s<span class="line-dec">%s</span></h2>', esc_html($section_title), esc_html($title_underline)); ?>
+                                    <?php if ($section_title || $title_underline) {  ?>
+                                        <div class="section-title inner-title text-left mx-0">
+                                            <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
                                         </div>
-                                    <?php  } ?>
+                                    <?php  }  ?>
+                                    <?php if ($section_content) {
+                                        echo sprintf('<p>%s</p>', $section_content);
+                                    } ?>
                                     <div class="sales-offer text-center">
-                                        <?php if ($section_content) {
-                                            echo sprintf('<p>%s</p>', $section_content);
-                                        }
-                                        if ($items) {
+                                        <?php if ($items) {
                                         ?>
                                             <ul>
                                                 <?php foreach ($items as $item) {
@@ -231,16 +231,16 @@ get_header(); ?>
                         <div class="sales">
                             <div class="container">
                                 <section class="sales-sec">
-                                    <?php if ($section_title || $title_underline) { ?>
-                                        <div class="section-title" data-aos="fade-in">
-                                            <?php echo sprintf('<h2>%s<span class="line-dec">%s</span></h2>', esc_html($section_title), esc_html($title_underline)); ?>
+                                    <?php if ($section_title || $title_underline) {  ?>
+                                        <div class="section-title inner-title text-left mx-0">
+                                            <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
                                         </div>
-                                    <?php  } ?>
+                                    <?php  }  ?>
+                                    <?php if ($section_content) {
+                                        echo sprintf('<p>%s</p>', $section_content);
+                                    } ?>
                                     <div class="sales-offer text-center">
-                                        <?php if ($section_content) {
-                                            echo sprintf('<p>%s</p>', $section_content);
-                                        }
-                                        if ($items) {
+                                        <?php if ($items) {
                                         ?>
                                             <ul>
                                                 <?php foreach ($items as $item) {

@@ -75,15 +75,16 @@ get_header(); ?>
                         <div class="sales">
                             <div class="container">
                                 <section class="sales-sec">
-                                    <?php if ($section_title || $title_underline) { ?>
-                                        <div class="section-title" data-aos="fade-in">
-                                            <?php echo sprintf('<h2>%s<span class="line-dec">%s</span></h2>', esc_html($section_title), esc_html($title_underline)); ?>
+                                    <?php if ($section_title || $title_underline) {  ?>
+                                        <div class="section-title inner-title text-left mx-0">
+                                            <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
                                         </div>
-                                    <?php  } ?>
+                                    <?php  }  ?>
+                                    <?php if ($section_content) {
+                                        echo sprintf('<p>%s</p>', $section_content);
+                                    } ?>
                                     <div class="sales-offer text-center">
-                                        <?php if ($section_content) {
-                                            echo sprintf('<p>%s</p>', $section_content);
-                                        }
+                                        <?php
                                         if ($items) {
                                         ?>
                                             <ul>
@@ -217,7 +218,7 @@ get_header(); ?>
                         $title_underline = (isset($elements_section['title_underline'])) ? $elements_section['title_underline'] : false;
                         $section_content = (isset($elements_section['section_content'])) ? $elements_section['section_content'] : false;
                         $elements = (isset($elements_section['elements'])) ? $elements_section['elements'] : false;
-                    
+
                     ?>
                         <section class="manango-style-content pt-0" data-aos="fade-in">
                             <?php if ($section_title || $title_underline) { ?>
@@ -231,26 +232,26 @@ get_header(); ?>
                             <?php if ($elements) { ?>
                                 <div class="manango-style-list mt-5">
                                     <div class="row">
-                                        <?php 
-                                            foreach ($elements as $element) { ?>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="service-brief " data-aos="fade-down">
-                                                        <?php if ($element['image']) { ?>
-                                                            <div class="icon">
-                                                                <img src="<?php echo esc_url($element['image']['url']); ?>" class="img-fluid">
-                                                            </div>
-                                                        <?php } ?>
-                                                        <?php if ($element['title']) {
-                                                            echo sprintf('<h2>%s</h2>', $element['title']);
-                                                        } ?>
-                                                        <?php if ($element['content']) {
-                                                            echo sprintf('<p>%s</p>', $element['content']);
-                                                        } ?>
-                                                    </div>
+                                        <?php
+                                        foreach ($elements as $element) { ?>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="service-brief " data-aos="fade-down">
+                                                    <?php if ($element['image']) { ?>
+                                                        <div class="icon">
+                                                            <img src="<?php echo esc_url($element['image']['url']); ?>" class="img-fluid">
+                                                        </div>
+                                                    <?php } ?>
+                                                    <?php if ($element['title']) {
+                                                        echo sprintf('<h2>%s</h2>', $element['title']);
+                                                    } ?>
+                                                    <?php if ($element['content']) {
+                                                        echo sprintf('<p>%s</p>', $element['content']);
+                                                    } ?>
                                                 </div>
+                                            </div>
                                         <?php }
-                                         ?>
-                                       
+                                        ?>
+
                                     </div>
                                 </div>
                             <?php } ?>
