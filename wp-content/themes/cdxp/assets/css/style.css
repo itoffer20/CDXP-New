@@ -1272,8 +1272,13 @@ a.scrollup, a.scrollup:visited {
 .contact-list p, .map-sec p, .form-details p{
 	margin-bottom: 0;
 }
+form{
+	position: relative;
+}
 .wpcf7-spinner{
 	position: absolute;
+	right:0;
+	bottom:0;
 }
 .form-details p br{
 	display: none;
