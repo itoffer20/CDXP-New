@@ -1283,3 +1283,10 @@ form{
 .form-details p br{
 	display: none;
 }
+.two-btn{
+	display: flex;
+	flex-wrap: wrap;
+}
+.two-btn a{
+margin-right:20px !important;
+}

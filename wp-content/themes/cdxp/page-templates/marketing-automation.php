@@ -213,6 +213,7 @@ get_header(); ?>
                             <?php if ($support_section['content']) {
                                 echo sprintf('<p>%s</p>', $support_section['content']);
                             } ?>
+                            <div class="two-btn">
                             <?php if ($support_section['button_1']) {
                                 echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($support_section['button_1']['url']), esc_html($support_section['button_1']['title']));
                             } ?>
@@ -222,6 +223,7 @@ get_header(); ?>
                             <?php if ($support_section['button_3']) {
                                 echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($support_section['button_3']['url']), esc_html($support_section['button_3']['title']));
                             } ?>
+                            </div>
                         </section>
                     <?php } ?>
                     <?php
@@ -237,15 +239,17 @@ get_header(); ?>
                             <?php if ($contact_seomondo_section['content']) {
                                 echo sprintf('<p>%s</p>', $contact_seomondo_section['content']);
                             } ?>
+                            <div class="two-btn">
                             <?php if ($contact_seomondo_section['button_1']) {
                                 echo sprintf('<a href="%s" class="btn"><i class="fas fa-phone-volume"></i> %s</a>', esc_url($contact_seomondo_section['button_1']['url']), esc_html($contact_seomondo_section['button_1']['title']));
                             } ?>
                             <?php if ($contact_seomondo_section['button_2']) {
-                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_2']['url']), esc_html($contact_seomondo_section['button_2']['title']));
+                                echo sprintf('<a href="%s" class="btn bg">%s</a>', esc_url($contact_seomondo_section['button_2']['url']), esc_html($contact_seomondo_section['button_2']['title']));
                             } ?>
                             <?php if ($contact_seomondo_section['button_3']) {
                                 echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_3']['url']), esc_html($contact_seomondo_section['button_3']['title']));
                             } ?>
+                            </div>
                         </section>
                     <?php } ?>
                 </div>

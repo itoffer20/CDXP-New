@@ -181,28 +181,28 @@ get_header(); ?>
                         $section_content = (isset($personalized_offers_section['section_content'])) ? $personalized_offers_section['section_content'] : false;
                         $items = (isset($personalized_offers_section['items'])) ? $personalized_offers_section['items'] : false;
                     ?>
-                            <section class="sales-sec pt-0">
-                                <?php if ($section_title || $title_underline) {  ?>
-                                <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($section_title); ?> <span
-                                            class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
-                                </div>
-                                <?php  }  ?>
-                                <?php if ($section_content) {
+                    <section class="sales-sec pt-0">
+                        <?php if ($section_title || $title_underline) {  ?>
+                        <div class="section-title inner-title text-left mx-0">
+                            <h2><?php echo esc_html($section_title); ?> <span
+                                    class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
+                        </div>
+                        <?php  }  ?>
+                        <?php if ($section_content) {
                                         echo sprintf('<p>%s</p>', $section_content);
                                     } ?>
-                                <div class="sales-offer text-center">
-                                    <?php 
+                        <div class="sales-offer text-center">
+                            <?php 
                                         if ($items) {
                                         ?>
-                                    <ul>
-                                        <?php foreach ($items as $item) {
+                            <ul>
+                                <?php foreach ($items as $item) {
                                                     echo sprintf('<li data-aos="fade-up">%s</li>', esc_html($item['content']));
                                                 } ?>
-                                    </ul>
-                                    <?php } ?>
-                                </div>
-                            </section>
+                            </ul>
+                            <?php } ?>
+                        </div>
+                    </section>
                     <?php } ?>
                     <?php
                     $service_messages_section = get_field('service_messages_section');
@@ -212,28 +212,28 @@ get_header(); ?>
                         $section_content = (isset($service_messages_section['section_content'])) ? $service_messages_section['section_content'] : false;
                         $items = (isset($service_messages_section['items'])) ? $service_messages_section['items'] : false;
                     ?>
-                            <section class="sales-sec pt-0">
-                                <?php if ($section_title || $title_underline) {  ?>
-                                <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($section_title); ?> <span
-                                            class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
-                                </div>
-                                <?php  }  ?>
-                                <?php if ($section_content) {
+                    <section class="sales-sec pt-0">
+                        <?php if ($section_title || $title_underline) {  ?>
+                        <div class="section-title inner-title text-left mx-0">
+                            <h2><?php echo esc_html($section_title); ?> <span
+                                    class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
+                        </div>
+                        <?php  }  ?>
+                        <?php if ($section_content) {
                                         echo sprintf('<p>%s</p>', $section_content);
                                     } ?>
-                                <div class="sales-offer text-center">
-                                    <?php 
+                        <div class="sales-offer text-center">
+                            <?php 
                                         if ($items) {
                                         ?>
-                                    <ul>
-                                        <?php foreach ($items as $item) {
+                            <ul>
+                                <?php foreach ($items as $item) {
                                                     echo sprintf('<li data-aos="fade-up">%s</li>', esc_html($item['content']));
                                                 } ?>
-                                    </ul>
-                                    <?php } ?>
-                                </div>
-                            </section>
+                            </ul>
+                            <?php } ?>
+                        </div>
+                    </section>
                     <?php } ?>
                     <?php
                     $companies_section = get_field('companies_section');
@@ -307,14 +307,14 @@ get_header(); ?>
                         <?php if ($contact_seomondo_section['content']) {
                                 echo sprintf('<p>%s</p>', $contact_seomondo_section['content']);
                             } ?>
-                        <?php if ($contact_seomondo_section['button_1']) {
+                            <?php if ($contact_seomondo_section['button_1']) {
                                 echo sprintf('<a href="%s" class="btn"><i class="fas fa-phone-volume"></i> %s</a>', esc_url($contact_seomondo_section['button_1']['url']), esc_html($contact_seomondo_section['button_1']['title']));
                             } ?>
-                        <?php if ($contact_seomondo_section['button_2']) {
-                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_2']['url']), esc_html($contact_seomondo_section['button_2']['title']));
+                            <?php if ($contact_seomondo_section['button_2']) {
+                                echo sprintf('<a href="%s" class="btn bg">%s</a>', esc_url($contact_seomondo_section['button_2']['url']), esc_html($contact_seomondo_section['button_2']['title']));
                             } ?>
-                        <?php if ($contact_seomondo_section['button_3']) {
-                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_3']['url']), esc_html($contact_seomondo_section['button_3']['title']));
+                            <?php if ($contact_seomondo_section['button_3']) {
+                                echo sprintf('<a href="%s" class="btn bg">%s</a>', esc_url($contact_seomondo_section['button_3']['url']), esc_html($contact_seomondo_section['button_3']['title']));
                             } ?>
                     </section>
                     <?php } ?>
