@@ -134,8 +134,13 @@ get_header(); ?>
                             <?php if ($content) {
                                 echo sprintf('<p>%s</p>', $content);
                             } ?>
+                            <div class="mb-5">
+                                <?php if ($button) {
+                                    echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($button['url']), esc_html($button['title']));
+                                } ?>
+                            </div>
                             <?php if ($logos) { ?>
-                                <div class="logo-slider">
+                                <div class="logo-slider ">
                                     <?php foreach ($logos as $logo) { ?>
                                         <div class="slide-item">
                                             <div class="logo-list text-center">
@@ -147,11 +152,7 @@ get_header(); ?>
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <div>
-                                <?php if ($button) {
-                                    echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($button['url']), esc_html($button['title']));
-                                } ?>
-                            </div>
+                            
                         </section>
                     <?php } ?>
                     <?php

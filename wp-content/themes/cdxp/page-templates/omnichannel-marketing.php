@@ -72,9 +72,7 @@ get_header(); ?>
                         $section_content = (isset($purpose_section['section_content'])) ? $purpose_section['section_content'] : false;
                         $purposes = (isset($purpose_section['purposes'])) ? $purpose_section['purposes'] : false;
                     ?>
-                        <div class="sales">
-                            <div class="container">
-                                <section class="sales-sec">
+                                <section class="sales-sec pt-0">
                                     <?php if ($section_title || $title_underline) {  ?>
                                         <div class="section-title inner-title text-left mx-0">
                                             <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
@@ -94,8 +92,6 @@ get_header(); ?>
                                         <?php } ?>
                                     </div>
                                 </section>
-                            </div>
-                        </div>
                     <?php } ?>
                     <?php
                     $media_section = get_field('media_section');
@@ -195,9 +191,7 @@ get_header(); ?>
                         $section_content = (isset($mobile_marketing_section['section_content'])) ? $mobile_marketing_section['section_content'] : false;
                         $items = (isset($mobile_marketing_section['items'])) ? $mobile_marketing_section['items'] : false;
                     ?>
-                        <div class="sales">
-                            <div class="container">
-                                <section class="sales-sec">
+                                <section class="sales-sec pt-0">
                                     <?php if ($section_title || $title_underline) {  ?>
                                         <div class="section-title inner-title text-left mx-0">
                                             <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
@@ -217,8 +211,6 @@ get_header(); ?>
                                         <?php } ?>
                                     </div>
                                 </section>
-                            </div>
-                        </div>
                     <?php } ?>
                     <?php
                     $personalized_offers_section = get_field('personalized_offers_section');
@@ -228,9 +220,7 @@ get_header(); ?>
                         $section_content = (isset($personalized_offers_section['section_content'])) ? $personalized_offers_section['section_content'] : false;
                         $items = (isset($personalized_offers_section['items'])) ? $personalized_offers_section['items'] : false;
                     ?>
-                        <div class="sales">
-                            <div class="container">
-                                <section class="sales-sec">
+                                <section class="sales-sec pt-0">
                                     <?php if ($section_title || $title_underline) {  ?>
                                         <div class="section-title inner-title text-left mx-0">
                                             <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
@@ -250,8 +240,6 @@ get_header(); ?>
                                         <?php } ?>
                                     </div>
                                 </section>
-                            </div>
-                        </div>
                     <?php } ?>
                     <?php
                     $sales_channels_section = get_field('sales_channels_section');

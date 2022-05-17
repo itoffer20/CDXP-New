@@ -72,9 +72,8 @@ get_header(); ?>
                         $section_content = (isset($marketing_section['section_content'])) ? $marketing_section['section_content'] : false;
                         $items = (isset($marketing_section['items'])) ? $marketing_section['items'] : false;
                     ?>
-                        <div class="sales">
-                            <div class="container">
-                                <section class="sales-sec">
+ 
+                                <section class="sales-sec pt-0">
                                     <?php if ($section_title || $title_underline) {  ?>
                                         <div class="section-title inner-title text-left mx-0">
                                             <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
@@ -95,8 +94,6 @@ get_header(); ?>
                                         <?php } ?>
                                     </div>
                                 </section>
-                            </div>
-                        </div>
                     <?php } ?>
                     <?php
                     $customers_in_focus_section = get_field('customers_in_focus_section');
