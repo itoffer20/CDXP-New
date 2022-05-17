@@ -361,6 +361,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_62832b42f641b",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
                     "key": "field_6282531f6bb79",
                     "label": "Logos",
                     "name": "logos",
@@ -608,5 +627,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1652708625
+    "modified": 1652763479
 }

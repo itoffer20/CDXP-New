@@ -153,8 +153,8 @@
         },
         {
             "key": "field_62824a1d16d91",
-            "label": "E-mail marketing Section",
-            "name": "e-mail_marketing_section",
+            "label": "Email marketing Section",
+            "name": "email_marketing_section",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -658,5 +658,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1652709112
+    "modified": 1652767542
 }

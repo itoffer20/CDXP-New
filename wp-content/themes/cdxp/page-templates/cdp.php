@@ -9,14 +9,14 @@ get_header(); ?>
             <div class="row">
                 <div class="col-lg-9">
                     <?php
-                    $salesmanago_cdxp_section = get_field('salesmanago_cdxp_section');
-                    if ($salesmanago_cdxp_section) {
-                        $section_title = (isset($salesmanago_cdxp_section['section_title'])) ? $salesmanago_cdxp_section['section_title'] : false;
-                        $section_content = (isset($salesmanago_cdxp_section['section_content'])) ? $salesmanago_cdxp_section['section_content'] : false;
-                        $button_1 = (isset($salesmanago_cdxp_section['button_1'])) ? $salesmanago_cdxp_section['button_1'] : false;
-                        $button_2 = (isset($salesmanago_cdxp_section['button_2'])) ? $salesmanago_cdxp_section['button_2'] : false;
-                        $image = (isset($salesmanago_cdxp_section['image'])) ? $salesmanago_cdxp_section['image'] : false;
-                        $image_blob = (isset($salesmanago_cdxp_section['image_blob'])) ? $salesmanago_cdxp_section['image_blob'] : false;
+                    $cdp_section = get_field('cdp_section');
+                    if ($cdp_section) {
+                        $section_title = (isset($cdp_section['section_title'])) ? $cdp_section['section_title'] : false;
+                        $section_content = (isset($cdp_section['section_content'])) ? $cdp_section['section_content'] : false;
+                        $button_1 = (isset($cdp_section['button_1'])) ? $cdp_section['button_1'] : false;
+                        $button_2 = (isset($cdp_section['button_2'])) ? $cdp_section['button_2'] : false;
+                        $image = (isset($cdp_section['image'])) ? $cdp_section['image'] : false;
+                        $image_blob = (isset($cdp_section['image_blob'])) ? $cdp_section['image_blob'] : false;
                     ?>
                         <section class="salesmanago-content pt-0">
                             <div class="row">
@@ -65,124 +65,104 @@ get_header(); ?>
                         </section>
                     <?php } ?>
                     <?php
-                    $what_is_cdxp_section = get_field('what_is_cdxp_section');
-                    if ($what_is_cdxp_section) {
+                    $marketing_section = get_field('marketing_section');
+                    if ($marketing_section) {
+                        $section_title = (isset($marketing_section['section_title'])) ? $marketing_section['section_title'] : false;
+                        $title_underline = (isset($marketing_section['title_underline'])) ? $marketing_section['title_underline'] : false;
+                        $section_content = (isset($marketing_section['section_content'])) ? $marketing_section['section_content'] : false;
+                        $items = (isset($marketing_section['items'])) ? $marketing_section['items'] : false;
+                    ?>
+                        <div class="sales">
+                            <div class="container">
+                                <section class="sales-sec">
+                                    <?php if ($section_title || $title_underline) { ?>
+                                        <div class="section-title" data-aos="fade-in">
+                                            <?php echo sprintf('<h2>%s<span class="line-dec">%s</span></h2>', esc_html($section_title), esc_html($title_underline)); ?>
+                                        </div>
+                                    <?php  } ?>
+                                    <div class="sales-offer text-center">
+                                        <?php if ($section_content) {
+                                            echo sprintf('<p>%s</p>', $section_content);
+                                        }
+                                        if ($items) {
+                                        ?>
+                                            <ul>
+                                                <?php foreach ($items as $item) {
+                                                    echo sprintf('<li data-aos="fade-up">%s</li>', esc_html($item['content']));
+                                                } ?>
+                                            </ul>
+                                        <?php } ?>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <?php
+                    $customers_in_focus_section = get_field('customers_in_focus_section');
+                    if ($customers_in_focus_section) {
                     ?>
                         <section class="cdxp-content pt-0" data-aos="fade-in">
-                            <?php if ($what_is_cdxp_section['title']) {
+                            <?php if ($customers_in_focus_section['title'] || $customers_in_focus_section['title_underline']) {
                             ?>
                                 <div class="section-title inner-title text-left mx-0">
-                                    <h2><span class="line-dec"><?php echo esc_html($what_is_cdxp_section['title']); ?></span></h2>
+                                    <h2><?php echo esc_html($customers_in_focus_section['title']); ?> <span class="line-dec"><?php echo esc_html($customers_in_focus_section['title_underline']); ?></span></h2>
                                 </div>
                             <?php  }
                             ?>
-                            <?php if ($what_is_cdxp_section['content']) {
-                                echo sprintf('<p>%s</p>', $what_is_cdxp_section['content']);
+                            <?php if ($customers_in_focus_section['content']) {
+                                echo sprintf('<p>%s</p>', $customers_in_focus_section['content']);
                             } ?>
-                            <?php if ($what_is_cdxp_section['button_1'] || $what_is_cdxp_section['button_2']) { ?>
+                            <?php if ($customers_in_focus_section['button_1'] || $customers_in_focus_section['button_2']) { ?>
                                 <div class="two-btn d-flex flex-wrap align-items-center justify-content-center mt-5 " data-aos="fade-in">
-                                    <?php if ($what_is_cdxp_section['button_1']) {
-                                        echo sprintf('<a href="%s" class="btn mr-4 mb-3 text-auto">%s</a>', esc_url($what_is_cdxp_section['button_1']['url']), esc_html($what_is_cdxp_section['button_1']['title']));
+                                    <?php if ($customers_in_focus_section['button_1']) {
+                                        echo sprintf('<a href="%s" class="btn mr-4 mb-3 text-auto">%s</a>', esc_url($customers_in_focus_section['button_1']['url']), esc_html($customers_in_focus_section['button_1']['title']));
                                     }    ?>
-                                    <?php if ($what_is_cdxp_section['button_2']) {
-                                        echo sprintf('<a href="%s" class="btn bg mb-3 text-auto">%s</a>', esc_url($what_is_cdxp_section['button_2']['url']), esc_html($what_is_cdxp_section['button_2']['title']));
+                                    <?php if ($customers_in_focus_section['button_2']) {
+                                        echo sprintf('<a href="%s" class="btn bg mb-3 text-auto">%s</a>', esc_url($customers_in_focus_section['button_2']['url']), esc_html($customers_in_focus_section['button_2']['title']));
                                     }    ?>
                                 </div>
                             <?php } ?>
                         </section>
                     <?php } ?>
                     <?php
-                    $salesmanango_uses_section = get_field('salesmanango_uses_section');
-                    if ($salesmanango_uses_section) {
-                        $section_title = (isset($salesmanango_uses_section['section_title'])) ? $salesmanango_uses_section['section_title'] : false;
-                        $title_underline = (isset($salesmanango_uses_section['title_underline'])) ? $salesmanango_uses_section['title_underline'] : false;
-                        $section_content = (isset($salesmanango_uses_section['section_content'])) ? $salesmanango_uses_section['section_content'] : false;
-                        $uses = (isset($salesmanango_uses_section['uses'])) ? $salesmanango_uses_section['uses'] : false;
-                        $content_below = (isset($salesmanango_uses_section['content_below'])) ? $salesmanango_uses_section['content_below'] : false;
-                        $button = (isset($salesmanango_uses_section['button'])) ? $salesmanango_uses_section['button'] : false;
+                    $ecommerce_business_section = get_field('ecommerce_business_section');
+                    if ($ecommerce_business_section) {
                     ?>
-                        <section class="manango-style-content pt-0" data-aos="fade-in">
-                            <?php if ($section_title || $title_underline) { ?>
+                        <section class="cdxp-content pt-0" data-aos="fade-in">
+                            <?php if ($ecommerce_business_section['title'] || $ecommerce_business_section['title_underline']) {
+                            ?>
                                 <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
+                                    <h2><?php echo esc_html($ecommerce_business_section['title']); ?> <span class="line-dec"><?php echo esc_html($ecommerce_business_section['title_underline']); ?></span></h2>
                                 </div>
-                            <?php } ?>
-                            <?php if ($section_content) {
-                                echo sprintf('<p>%s</p>', $section_content);
+                            <?php  }
+                            ?>
+                            <?php if ($ecommerce_business_section['content']) {
+                                echo sprintf('<p>%s</p>', $ecommerce_business_section['content']);
                             } ?>
-                            <?php if ($uses || $content_below || $button) { ?>
-                                <div class="manango-style-list mt-5">
-                                    <div class="row">
-                                        <?php if ($uses) {
-                                            foreach ($uses as $use) { ?>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="service-brief " data-aos="fade-down">
-                                                        <?php if ($use['image']) { ?>
-                                                            <div class="icon">
-                                                                <img src="<?php echo esc_url($use['image']['url']); ?>" class="img-fluid">
-                                                            </div>
-                                                        <?php } ?>
-                                                        <?php if ($use['title']) {
-                                                            echo sprintf('<h2>%s</h2>', $use['title']);
-                                                        } ?>
-                                                        <?php if ($use['content']) {
-                                                            echo sprintf('<p>%s</p>', $use['content']);
-                                                        } ?>
-                                                    </div>
-                                                </div>
-                                        <?php }
-                                        } ?>
-                                        <div class="col-lg-12">
-                                            <?php if ($content_below) {
-                                                echo sprintf('<p>%s</p>', $content_below);
-                                            } ?>
-                                            <?php if ($button) {
-                                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($button['url']), esc_html($button['title']));
-                                            } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </section>
-                    <?php } ?>
-                    <?php
-                    $marketing_section = get_field('marketing_section');
-                    if ($marketing_section) {
-                    ?>
-                        <section class="marketing-content pt-0" data-aos="fade-in">
-                            <?php if ($marketing_section['title'] || $marketing_section['title_underline']) { ?>
-                                <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($marketing_section['title']); ?> <span class="line-dec"><?php echo esc_html($marketing_section['title_underline']); ?></span></h2>
-                                </div>
-                            <?php } ?>
-                            <?php if ($marketing_section['content']) {
-                                echo sprintf('<p>%s</p>', $marketing_section['content']);
-                            } ?>
-                            <?php if ($marketing_section['button_1'] || $marketing_section['button_2'] || $marketing_section['button_3']) { ?>
+                            <?php if ($ecommerce_business_section['button_1'] || $ecommerce_business_section['button_2']) { ?>
                                 <div class="two-btn d-flex flex-wrap align-items-center justify-content-center mt-5 " data-aos="fade-in">
-
-                                    <?php if ($marketing_section['button_1']) {
-                                        echo sprintf('<a href="%s" class="btn mr-4 mb-3 text-auto">%s</a>', esc_url($marketing_section['button_1']['url']), esc_html($marketing_section['button_1']['title']));
-                                    } ?>
-                                    <?php if ($marketing_section['button_2']) {
-                                        echo sprintf('<a href="%s" class="btn bg  mb-3 text-auto">%s</a>', esc_url($marketing_section['button_2']['url']), esc_html($marketing_section['button_2']['title']));
-                                    } ?>
+                                    <?php if ($ecommerce_business_section['button_1']) {
+                                        echo sprintf('<a href="%s" class="btn mr-4 mb-3 text-auto">%s</a>', esc_url($ecommerce_business_section['button_1']['url']), esc_html($ecommerce_business_section['button_1']['title']));
+                                    }    ?>
+                                    <?php if ($ecommerce_business_section['button_2']) {
+                                        echo sprintf('<a href="%s" class="btn bg mb-3 text-auto">%s</a>', esc_url($ecommerce_business_section['button_2']['url']), esc_html($ecommerce_business_section['button_2']['title']));
+                                    }    ?>
                                 </div>
                             <?php } ?>
                         </section>
                     <?php } ?>
                     <?php
-                    $plug_play_section = get_field('plug_play_section');
-                    if ($plug_play_section) {
-                        $title_underline = (isset($plug_play_section['title_underline'])) ? $plug_play_section['title_underline'] : false;
-                        $title = (isset($plug_play_section['title'])) ? $plug_play_section['title'] : false;
-                        $content = (isset($plug_play_section['content'])) ? $plug_play_section['content'] : false;
-                        $logos = (isset($plug_play_section['logos'])) ? $plug_play_section['logos'] : false;
+                    $customers_section = get_field('customers_section');
+                    if ($customers_section) {
+                        $title_underline = (isset($customers_section['title_underline'])) ? $customers_section['title_underline'] : false;
+                        $section_title = (isset($customers_section['section_title'])) ? $customers_section['section_title'] : false;
+                        $content = (isset($customers_section['content'])) ? $customers_section['content'] : false;
+                        $logos = (isset($customers_section['logos'])) ? $customers_section['logos'] : false;
                     ?>
                         <section class="play-plug-content pt-0" data-aos="fade-in">
-                            <?php if ($title_underline || $title) { ?>
+                            <?php if ($title_underline || $section_title) { ?>
                                 <div class="section-title inner-title text-left mx-0">
-                                    <h2><span class="line-dec"><?php echo esc_html($title_underline); ?></span> <?php echo esc_html($title); ?></h2>
+                                    <h2><span class="line-dec"><?php echo esc_html($title_underline); ?></span> <?php echo esc_html($section_title); ?></h2>
                                 </div>
                             <?php } ?>
                             <?php if ($content) {
@@ -204,68 +184,100 @@ get_header(); ?>
                         </section>
                     <?php } ?>
                     <?php
-                    $support_section = get_field('support_section');
-                    if ($support_section) {
+                    $cdp_with_ai_section = get_field('cdp_with_ai_section');
+                    if ($cdp_with_ai_section) {
+                    ?>
+                        <section class="cdxp-content pt-0" data-aos="fade-in">
+                            <?php if ($cdp_with_ai_section['title'] || $cdp_with_ai_section['title_underline']) {
+                            ?>
+                                <div class="section-title inner-title text-left mx-0">
+                                    <h2><?php echo esc_html($cdp_with_ai_section['title']); ?> <span class="line-dec"><?php echo esc_html($cdp_with_ai_section['title_underline']); ?></span></h2>
+                                </div>
+                            <?php  }
+                            ?>
+                            <?php if ($cdp_with_ai_section['content']) {
+                                echo sprintf('<p>%s</p>', $cdp_with_ai_section['content']);
+                            } ?>
+                            <?php if ($cdp_with_ai_section['button_1'] || $cdp_with_ai_section['button_2']) { ?>
+                                <div class="two-btn d-flex flex-wrap align-items-center justify-content-center mt-5 " data-aos="fade-in">
+                                    <?php if ($cdp_with_ai_section['button_1']) {
+                                        echo sprintf('<a href="%s" class="btn mr-4 mb-3 text-auto">%s</a>', esc_url($cdp_with_ai_section['button_1']['url']), esc_html($cdp_with_ai_section['button_1']['title']));
+                                    }    ?>
+                                    <?php if ($cdp_with_ai_section['button_2']) {
+                                        echo sprintf('<a href="%s" class="btn bg mb-3 text-auto">%s</a>', esc_url($cdp_with_ai_section['button_2']['url']), esc_html($cdp_with_ai_section['button_2']['title']));
+                                    }    ?>
+                                </div>
+                            <?php } ?>
+                        </section>
+                    <?php } ?>
+                    <?php
+                    $elements_section = get_field('elements_section');
+                    if ($elements_section) {
+                        $section_title = (isset($elements_section['section_title'])) ? $elements_section['section_title'] : false;
+                        $title_underline = (isset($elements_section['title_underline'])) ? $elements_section['title_underline'] : false;
+                        $section_content = (isset($elements_section['section_content'])) ? $elements_section['section_content'] : false;
+                        $elements = (isset($elements_section['elements'])) ? $elements_section['elements'] : false;
+                    
+                    ?>
+                        <section class="manango-style-content pt-0" data-aos="fade-in">
+                            <?php if ($section_title || $title_underline) { ?>
+                                <div class="section-title inner-title text-left mx-0">
+                                    <h2><?php echo esc_html($section_title); ?> <span class="line-dec"><?php echo esc_html($title_underline); ?></span></h2>
+                                </div>
+                            <?php } ?>
+                            <?php if ($section_content) {
+                                echo sprintf('<p>%s</p>', $section_content);
+                            } ?>
+                            <?php if ($elements) { ?>
+                                <div class="manango-style-list mt-5">
+                                    <div class="row">
+                                        <?php 
+                                            foreach ($elements as $element) { ?>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="service-brief " data-aos="fade-down">
+                                                        <?php if ($element['image']) { ?>
+                                                            <div class="icon">
+                                                                <img src="<?php echo esc_url($element['image']['url']); ?>" class="img-fluid">
+                                                            </div>
+                                                        <?php } ?>
+                                                        <?php if ($element['title']) {
+                                                            echo sprintf('<h2>%s</h2>', $element['title']);
+                                                        } ?>
+                                                        <?php if ($element['content']) {
+                                                            echo sprintf('<p>%s</p>', $element['content']);
+                                                        } ?>
+                                                    </div>
+                                                </div>
+                                        <?php }
+                                         ?>
+                                       
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </section>
+                    <?php } ?>
+                    <?php
+                    $contact_seomondo_section = get_field('contact_seomondo_section');
+                    if ($contact_seomondo_section) {
                     ?>
                         <section class="counseling-content pt-0" data-aos="fade-in">
-                            <?php if ($support_section['title'] || $support_section['title_underline']) { ?>
+                            <?php if ($contact_seomondo_section['title'] || $contact_seomondo_section['title_underline']) { ?>
                                 <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($support_section['title']); ?> <span class="line-dec"> <?php echo esc_html($support_section['title_underline']); ?> </span></h2>
+                                    <h2><?php echo esc_html($contact_seomondo_section['title']); ?> <span class="line-dec"> <?php echo esc_html($contact_seomondo_section['title_underline']); ?> </span></h2>
                                 </div>
                             <?php } ?>
-                            <?php if ($support_section['content']) {
-                                echo sprintf('<p>%s</p>', $support_section['content']);
+                            <?php if ($contact_seomondo_section['content']) {
+                                echo sprintf('<p>%s</p>', $contact_seomondo_section['content']);
                             } ?>
-                            <?php if ($support_section['button_1']) {
-                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($support_section['button_1']['url']), esc_html($support_section['button_1']['title']));
+                            <?php if ($contact_seomondo_section['button_1']) {
+                                echo sprintf('<a href="%s" class="btn"><i class="fas fa-phone-volume"></i> %s</a>', esc_url($contact_seomondo_section['button_1']['url']), esc_html($contact_seomondo_section['button_1']['title']));
                             } ?>
-                        </section>
-                    <?php } ?>
-                    <?php
-                    $cdxp_system = get_field('cdxp_system');
-                    if ($cdxp_system) {
-                    ?>
-                        <section class="development-content pt-0" data-aos="fade-in">
-                            <?php if ($cdxp_system['title'] || $cdxp_system['title_underline']) { ?>
-
-                                <div class="section-title inner-title text-left mx-0">
-                                    <h2><?php echo esc_html($cdxp_system['title']); ?> <span class="line-dec"> <?php echo esc_html($cdxp_system['title_underline']); ?></span>
-                                    </h2>
-                                </div>
-                            <?php } ?>
-                            <?php if ($cdxp_system['content']) {
-                                echo sprintf('<p>%s</p>', $cdxp_system['content']);
+                            <?php if ($contact_seomondo_section['button_2']) {
+                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_2']['url']), esc_html($contact_seomondo_section['button_2']['title']));
                             } ?>
-                            <?php if ($cdxp_system['button_1']) {
-                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($cdxp_system['button_1']['url']), esc_html($cdxp_system['button_1']['title']));
+                            <?php if ($contact_seomondo_section['button_3']) {
+                                echo sprintf('<a href="%s" class="btn">%s</a>', esc_url($contact_seomondo_section['button_3']['url']), esc_html($contact_seomondo_section['button_3']['title']));
                             } ?>
-                        </section>
-                    <?php } ?>
-                    <?php
-                    $about_salesmanago_section = get_field('about_salesmanago_section');
-                    if ($about_salesmanago_section) {
-                    ?>
-                        <section class="abt-content pt-0" data-aos="fade-in">
-                            <?php if ($cdxp_system['title'] || $cdxp_system['title_underline']) { ?>
-
-                                <div class="section-title inner-title text-left mx-0">
-                                    <h2><span class="line-dec"> <?php echo esc_html($cdxp_system['title_underline']); ?></span> </h2>
-                                </div>
-                            <?php } ?>
-
-                            <?php if ($cdxp_system['content']) {
-                                echo sprintf('<p>%s</p>', $cdxp_system['content']);
-                            } ?>
-                            <?php if ($cdxp_system['button_1'] || $cdxp_system['button_2']) {  ?>
-                                <div class="two-btn d-flex flex-wrap align-items-center justify-content-center mt-5 " data-aos="fade-in">
-                                    <?php if ($cdxp_system['button_1']) { ?>
-                                        <a href="<?php echo esc_url($cdxp_system['button_1']['url']); ?>" target="<?php echo $cdxp_system['button_1']['target']; ?>" class="btn mb-3 mr-4"><?php echo esc_html($cdxp_system['button_1']['title']); ?></a>
-                                    <?php }   ?>
-                                    <?php if ($cdxp_system['button_2']) { ?>
-                                        <a href="<?php echo esc_url($cdxp_system['button_2']['url']); ?>" target="<?php echo $cdxp_system['button_2']['target']; ?>" class="btn bg mb-3"><?php echo esc_html($cdxp_system['button_2']['title']); ?></a>
-                                    <?php }   ?>
-                                </div>
-                            <?php } ?>
                         </section>
                     <?php } ?>
                 </div>
